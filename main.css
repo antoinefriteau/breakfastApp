@@ -16,9 +16,14 @@ body {
 	padding:0;
 	height: 100%;
 	width: 100%;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-ms-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
 }
 #content {
-	width: 940px;
+	max-width: 940px;
 	margin:0 auto;
 	z-index: 1000;
 }
@@ -31,6 +36,7 @@ h1 {
 	letter-spacing: 4px;
 	line-height: 60px;
 	font-weight: bold;
+	text-align: center;
 }
 h2 {
 	padding-bottom: 20px;
@@ -48,11 +54,11 @@ img {
 	display:block;
 }
 .article {
-	float:left;
-	width:400px;
+	float: left;
+	display: inline-block;
+	width:40%;
 	background: white;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 20px 10px;
 	padding: 30px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -64,38 +70,44 @@ img {
 .article small {
 	color: #333;
 	font-style: italic;
-	font-size: 11px;
+	font-size: 80%;
 }
 ol {
 	padding-top:24px;
 	padding-left:25px;
 }
 ol li {
-	font-size: 11px;
+	font-size: 80%;
 	letter-spacing: 1px;
 	clear:both;
-	padding: 6px 2px 6px 2px; 
-	border-top: 1px solid #E9E9E9; 
+	padding: 10px 2px 10px 2px;
+	background-color: #efefef;
 }
 ol li:nth-child(2n+2) {
-	background-color: whiteSmoke;
+	background-color: #dedede;
 }
 ol li:last-child {
 	border-bottom: 1px solid #E9E9E9; 
 }
 .article ol li:hover {
-	background: #eee;
-	color: #04F;
-	box-shadow: 0px 1px 6px #eee;
+	background: transparent;
+	padding: 16px 2px;
+	-webkit-transition: all linear .4s;
+	-moz-transition: all linear .4s;
+	-o-transition: all linear .4s;
+	transition: all linear .4s;
+	cursor: crosshair;
 }
 ol li strong {
 	float:right;
 	font-weight:normal;
 }
 .aside {
-	float:right;
-	width:360px;
-	background: white;  margin-top: 20px;
+	float: right;
+	display: inline-block;
+	width:40%;
+	background: white;
+	margin: 20px 10px;
 	padding: 30px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -106,7 +118,6 @@ ol li strong {
 }
 .aside p {
 	margin-bottom: 10px;
-	font-size: 14px;
 	letter-spacing: 0px;
 	line-height: 18px;
 }
@@ -114,13 +125,12 @@ ol li strong {
 	padding-bottom: 12px;
 	padding-left: 40px;
 	line-height: 32px;
-	font-size: 14px;
 	letter-spacing: 0px;
 	color: #04F;
 }
 .aside small {
 	font-style: italic;
-	font-size: 11px;
+	font-size: 80%;
 }
 .right {
 	float:right;
@@ -157,3 +167,103 @@ left: 0;
 right: 0;
 bottom: 0;
 }
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* --- Phone (portrait) 320px --- */
+@media screen and (max-width:320px) {
+	body {
+		font:12px/120% 'Open Sans', Arial, sans-serif;
+	}
+	h1 {
+		font-size: 20px;
+		letter-spacing: 2px;
+		line-height: 26px;
+	}
+	h2 {
+		font-size: 24px;
+		line-height: 22px;
+	}
+	.article, .aside {
+		width: 90%;
+		margin: 20px 5%;
+	}
+}
+
+/* --- Phone (landscape) 480px --- */
+@media screen and (min-width:320px) and (max-width:480px) {
+	body {
+		font:13px/120% 'Open Sans', Arial, sans-serif;
+	}
+	h1 {
+		font-size: 26px;
+		letter-spacing: 3px;
+		line-height: 30px;
+	}
+	h2 {
+		font-size: 24px;
+		line-height: 22px;
+	}
+	.article, .aside {
+		width: 90%;
+		margin: 20px auto;
+	}
+}
+
+/* --- Lower than 640px --- */
+@media screen and (min-width:480px) and (max-width:640px) {
+	body {
+		font:14px/120% 'Open Sans', Arial, sans-serif;
+	}
+	h1 {
+		font-size: 26px;
+		letter-spacing: 3px;
+		line-height: 26px;
+	}
+	h2 {
+		font-size: 28px;
+		line-height: 22px;
+	}
+	.article, .aside {
+		width: 80%;
+		margin: 20px 5%;
+	}
+}
+
+
+/* --- Tablet (landscape) 768px --- */
+@media screen and (min-width:640px) and (max-width:768px) {
+	h1 {
+		font-size: 38px;
+		line-height: 38px;
+	}
+	h2 {
+		font-size: 32px;
+		line-height: 22px;
+	}
+	.article, .aside {
+		width: 80%;
+		margin: 20px 5%;
+	}
+}
+
+
+/* --- Small computer screen 900px --- */
+@media screen and (min-width:768px) and (max-width:900px) {
+	h1 {
+		font-size: 46px;
+		line-height: 46px;
+	}
+	.article, .aside {
+		width: 80%;
+		margin: 20px 5%;
+		float: left;
+	}
+}
+
+/* ==========================================================================
+	 END RESPONSIVE DESIGN
+   ========================================================================== */
