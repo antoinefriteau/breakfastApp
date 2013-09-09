@@ -81,10 +81,11 @@ ol li {
 	letter-spacing: 1px;
 	clear:both;
 	padding: 10px 2px 10px 2px;
-	background-color: #efefef;
+	background-color: #FAFAFA;
+	border-top: 1px solid #E9E9E9;
 }
 ol li:nth-child(2n+2) {
-	background-color: #dedede;
+	background-color: whitesmoke;
 }
 ol li:last-child {
 	border-bottom: 1px solid #E9E9E9; 
@@ -92,6 +93,7 @@ ol li:last-child {
 .article ol li:hover {
 	background: transparent;
 	padding: 16px 2px;
+	border-bottom: 2px solid #0044FF;
 	-webkit-transition: all linear .4s;
 	-moz-transition: all linear .4s;
 	-o-transition: all linear .4s;
