@@ -190,8 +190,9 @@ bottom: 0;
 		line-height: 22px;
 	}
 	.article, .aside {
-		width: 90%;
+		width: 80%;
 		margin: 20px 5%;
+		float: left;
 	}
 }
 
@@ -210,8 +211,9 @@ bottom: 0;
 		line-height: 22px;
 	}
 	.article, .aside {
-		width: 90%;
+		width: 85%;
 		margin: 20px auto;
+		float: left;
 	}
 }
 
@@ -232,6 +234,7 @@ bottom: 0;
 	.article, .aside {
 		width: 80%;
 		margin: 20px 5%;
+		float: left;
 	}
 }
 
@@ -249,6 +252,7 @@ bottom: 0;
 	.article, .aside {
 		width: 80%;
 		margin: 20px 5%;
+		float: left;
 	}
 }
 
