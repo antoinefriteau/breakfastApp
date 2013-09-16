@@ -1,0 +1,54 @@
+{
+    "infos": {
+        "title": "Estimation tarif",
+        "labelRate": "entre 35€ et 40€ (compte tenu de la réduction* de 10%)",
+        "info": "* Catherine Benichou a réussi à avoir 10% à la boulangerie d'en face (en prévenant la veille de la part de l'Apec)",
+        "pastries": [
+            {
+                "name": "pains au chocolat",
+                "Number": "15",
+                "ModificationDate": "16/09/2013"
+            },
+            {
+                "name": "pains au raisin",
+                "Number": "15",
+                "ModificationDate": "16/09/2013"
+            },
+            {
+                "name": "croissants aux amandes",
+                "Number": "5 à 10",
+                "ModificationDate": "16/09/2013"
+            },
+            {
+                "name": "choux à la crème ou chouquettes",
+                "Number": "12",
+                "ModificationDate": "16/09/2013"
+            },
+            {
+                "name": "litres de boissons",
+                "Number": "3 à 4",
+                "ModificationDate": "16/09/2013"
+            }
+        ]
+    },
+    "calendar" : [
+        { "amendedDate": "21/09/2013"},
+        { "amendedDate": "28/09/2013"}
+    ],
+    "users" : [
+        {
+            "name": "Antoine",
+            "LastName": "Friteau",
+            "trigram": "afu",
+            "CreationDate": "16/09/2013",
+            "ModificationDate": "16/09/2013"
+        },
+        {
+            "name": "Driss",
+            "LastName": "Aitali",
+            "trigram": "dai",
+            "CreationDate": "16/09/2013",
+            "ModificationDate": "16/09/2013"
+        }
+    ]
+}
