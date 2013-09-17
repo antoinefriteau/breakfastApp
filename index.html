@@ -2,61 +2,31 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
-		<title>Petit D&eacute;jeuner du Vendredi</title>
+		<title>Breakfast App</title>
 		<link rel="stylesheet" href="./main.css" type="text/css" />
+        <script src="./lib/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+
 		<div id="background">
-			<img src="./images/croissants.jpg" />
+			<img src="./images/backgrounds/croissants.jpg" />
 		</div>
+
 		<div id="content">
-			<h1>Petit D&eacute;jeuner du Vendredi</h1>
+
 			<section class="article">
 				<img src="./images/cafe.gif" alt="" width="80" class="right">
-				<h2>Dates</h2>
-				<p><small>V&eacute;rifiez vos dates de cong&eacute;s, S.V.P.</small></p>
-				<ol>
-					<li>KSI <strong>09/11/2012</strong></li>
-					<li>AGX <strong>16/11/2012</strong></li>
-					<li>MONTHLY <strong>23/11/2012</strong></li>
-					<li>CKK <strong>30/11/2012</strong></li>
-					<li>AFU <strong>07/12/2012</strong></li>
-					<li>GLS <strong>14/12/2012</strong></li>
-					<li>HJY <strong>21/12/2012</strong></li>
-					<li>SCT <strong>06/01/2013</strong></li>
-					<li>LCS <strong>13/01/2013</strong></li>
-					<li>DGL <strong>20/01/2013</strong></li>
-					<li>LGN <strong>27/01/2013</strong></li>
-					<li>DAI <strong>03/02/2013</strong></li>
-					<li>CLI <strong>10/02/2013</strong></li>
-					<li>SZR <strong>17/02/2013</strong></li>
-					<li>JGE <strong>24/02/2013</strong></li>
-					<li>CMU <strong>02/03/2013</strong></li>
-					<li>YAO <strong>09/03/2013</strong></li>
-					<li>SBN <strong>16/03/2013</strong></li>
-					<li>CBU <strong>23/03/2013</strong></li>
-					<li>RKI <strong>30/03/2013</strong></li>
-					<li>LTI <strong>13/04/2013</strong></li>
-					<li>VPT <strong>20/04/2013</strong></li>
-					<li>BTI <strong>27/04/2013</strong></li>
-					<li>MFI <strong>04/05/2013</strong></li>
-					<li>JCN <strong>11/05/2013</strong></li>
-					<li>BBT <strong>18/05/2013</strong></li>
-				</ol>
+				<ol id="calendar"></ol>
 			</section>
+
 			<aside class="aside">
-				<h2>Commande type</h2>
-				<p><strong>Estimation tarif</strong> : entre 35&euro; et 40&euro; (compte tenu de la r&eacute;duction* de 10%) </p>
-				<p><small>* Catherine Benichou a r&eacute;ussi &agrave; avoir 10% &agrave; la boulangerie d'en face (en pr&eacute;venant la veille de la part de l'Apec)</small></p>
-				<ul>
-					<li>15 pains au chocolat</li>
-					<li>15 pains au raisin</li>
-					<li>5 &agrave; 10 croissants aux amandes</li>
-					<li>12 choux &agrave; la cr&egrave;me ou chouquettes</li>
-					<li>3 &agrave; 4 litres de boissons</li>
-				</ul>
+				<ul id="pastries"></ul>
 				<img src="./images/ptidej.gif" alt="" width="120" class="center">
 			</section>
+
 		</div>
+
+        <script src="./custom.js" type="text/javascript" charset="utf-8"></script>
+
 	</body>
 </html>
