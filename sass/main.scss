@@ -88,6 +88,7 @@ img {
 ol {
     padding-top: 24px;
     padding-left: 25px;
+    list-style-type: decimal;
 
 	li {
 	    clear: both;
@@ -141,6 +142,10 @@ ol {
 	    margin-bottom: 10px;
 	    line-height: 18px;
 	    letter-spacing: 0;
+
+        strong {
+            font-weight: bold;
+        }
 	}
 
 	ul {
@@ -148,6 +153,7 @@ ol {
 	    line-height: 32px;
 	    letter-spacing: 0;
 	    color: #04F;
+        list-style-type: disc;
 	}
 
 	small {
@@ -212,6 +218,9 @@ ol {
         float: left;
         width: 100%;
         margin: 20px auto;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
     }
 }
 
@@ -238,6 +247,9 @@ ol {
         float: left;
         width: 100%;
         margin: 20px auto;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
     }
 }
 

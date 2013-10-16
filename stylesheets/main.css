@@ -97,8 +97,9 @@ img {
 ol {
   padding-top: 24px;
   padding-left: 25px;
+  list-style-type: decimal;
 }
-/* line 92, ../sass/main.scss */
+/* line 93, ../sass/main.scss */
 ol li {
   clear: both;
   padding: 10px 2px 10px 2px;
@@ -107,21 +108,21 @@ ol li {
   letter-spacing: 1px;
   background-color: #FAFAFA;
 }
-/* line 100, ../sass/main.scss */
+/* line 101, ../sass/main.scss */
 ol li:nth-child(2n+2) {
   background-color: whitesmoke;
 }
-/* line 104, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 ol li:last-child {
   border-bottom: 1px solid #E9E9E9;
 }
-/* line 108, ../sass/main.scss */
+/* line 109, ../sass/main.scss */
 ol li strong {
   float: right;
   font-weight: normal;
 }
 
-/* line 115, ../sass/main.scss */
+/* line 116, ../sass/main.scss */
 .article ol li:hover {
   padding: 16px 2px;
   border-bottom: 2px solid #0044FF;
@@ -133,7 +134,7 @@ ol li strong {
   cursor: crosshair;
 }
 
-/* line 126, ../sass/main.scss */
+/* line 127, ../sass/main.scss */
 .aside {
   display: inline-block;
   float: right;
@@ -148,36 +149,41 @@ ol li strong {
   -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
-/* line 140, ../sass/main.scss */
+/* line 141, ../sass/main.scss */
 .aside p {
   margin-bottom: 10px;
   line-height: 18px;
   letter-spacing: 0;
 }
 /* line 146, ../sass/main.scss */
+.aside p strong {
+  font-weight: bold;
+}
+/* line 151, ../sass/main.scss */
 .aside ul {
   padding: 12px 0 12px 40px;
   line-height: 32px;
   letter-spacing: 0;
   color: #04F;
+  list-style-type: disc;
 }
-/* line 153, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 .aside small {
   font-size: 70%;
   font-style: italic;
 }
 
-/* line 159, ../sass/main.scss */
+/* line 165, ../sass/main.scss */
 .right {
   float: right;
 }
 
-/* line 163, ../sass/main.scss */
+/* line 169, ../sass/main.scss */
 .center {
   margin: 0 auto;
 }
 
-/* line 167, ../sass/main.scss */
+/* line 173, ../sass/main.scss */
 #background {
   display: block;
   z-index: -1;
@@ -187,7 +193,7 @@ ol li strong {
   height: 200%;
   background: black;
 }
-/* line 176, ../sass/main.scss */
+/* line 182, ../sass/main.scss */
 #background img {
   display: block;
   top: 0;
@@ -204,81 +210,87 @@ ol li strong {
    ========================================================================== */
 /* --- Phone (portrait) 320px --- */
 @media screen and (max-width: 320px) {
-  /* line 195, ../sass/main.scss */
+  /* line 201, ../sass/main.scss */
   body {
     font: 12px/120% 'Open Sans',Arial,sans-serif;
   }
 
-  /* line 199, ../sass/main.scss */
+  /* line 205, ../sass/main.scss */
   h1 {
     font-size: 20px;
     line-height: 26px;
     letter-spacing: 2px;
   }
 
-  /* line 205, ../sass/main.scss */
+  /* line 211, ../sass/main.scss */
   h2 {
     font-size: 24px;
     line-height: 22px;
   }
 
-  /* line 211, ../sass/main.scss */
+  /* line 217, ../sass/main.scss */
   .article,
   .aside {
     float: left;
     width: 100%;
     margin: 20px auto;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
   }
 }
 /* --- Phone (landscape) 480px --- */
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  /* line 221, ../sass/main.scss */
+  /* line 230, ../sass/main.scss */
   body {
     font: 13px/120% 'Open Sans',Arial,sans-serif;
   }
 
-  /* line 225, ../sass/main.scss */
+  /* line 234, ../sass/main.scss */
   h1 {
     font-size: 26px;
     line-height: 30px;
     letter-spacing: 3px;
   }
 
-  /* line 231, ../sass/main.scss */
+  /* line 240, ../sass/main.scss */
   h2 {
     font-size: 24px;
     line-height: 22px;
   }
 
-  /* line 237, ../sass/main.scss */
+  /* line 246, ../sass/main.scss */
   .article,
   .aside {
     float: left;
     width: 100%;
     margin: 20px auto;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
   }
 }
 /* --- Lower than 640px --- */
 @media screen and (min-width: 480px) and (max-width: 640px) {
-  /* line 247, ../sass/main.scss */
+  /* line 259, ../sass/main.scss */
   body {
     font: 14px/120% 'Open Sans',Arial,sans-serif;
   }
 
-  /* line 251, ../sass/main.scss */
+  /* line 263, ../sass/main.scss */
   h1 {
     font-size: 26px;
     line-height: 26px;
     letter-spacing: 3px;
   }
 
-  /* line 257, ../sass/main.scss */
+  /* line 269, ../sass/main.scss */
   h2 {
     font-size: 28px;
     line-height: 22px;
   }
 
-  /* line 263, ../sass/main.scss */
+  /* line 275, ../sass/main.scss */
   .article,
   .aside {
     float: left;
@@ -288,19 +300,19 @@ ol li strong {
 }
 /* --- Tablet (landscape) 768px --- */
 @media screen and (min-width: 640px) and (max-width: 768px) {
-  /* line 273, ../sass/main.scss */
+  /* line 285, ../sass/main.scss */
   h1 {
     font-size: 38px;
     line-height: 38px;
   }
 
-  /* line 278, ../sass/main.scss */
+  /* line 290, ../sass/main.scss */
   h2 {
     font-size: 32px;
     line-height: 22px;
   }
 
-  /* line 284, ../sass/main.scss */
+  /* line 296, ../sass/main.scss */
   .article,
   .aside {
     float: left;
@@ -310,13 +322,13 @@ ol li strong {
 }
 /* --- Small computer screen 900px --- */
 @media screen and (min-width: 768px) and (max-width: 900px) {
-  /* line 294, ../sass/main.scss */
+  /* line 306, ../sass/main.scss */
   h1 {
     font-size: 46px;
     line-height: 46px;
   }
 
-  /* line 300, ../sass/main.scss */
+  /* line 312, ../sass/main.scss */
   .article,
   .aside {
     float: left;
