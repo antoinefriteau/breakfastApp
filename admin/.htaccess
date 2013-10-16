@@ -1,0 +1,6 @@
+AuthUserFile ../../../www/ptidej/admin/.htpasswd
+AuthName "Restricted Access"
+AuthType Basic
+<limit GET>
+require valid-user
+</Limit> 
