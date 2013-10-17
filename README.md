@@ -1,4 +1,4 @@
-ptidej
+Breakfast App
 ========
 
-A tool for initiate corporate's shared breakfast
+A simple web app to organize and build weekly breakfast 
