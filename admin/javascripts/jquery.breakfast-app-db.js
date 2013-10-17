@@ -17,7 +17,7 @@
         opts    = $.extend({}, $.fn.breakfastAppDB.defaults, options);  // extends options
         methods = $.extend({}, $.fn, $.fn.breakfastAppDB.classMethods); // extends class methods
 
-
+        /*
         // ADD RESET BUTTON
         var resetButton = $( '<button>', {class: 'reset', text: 'reset'} )
         resetButton.click(function() {
@@ -31,6 +31,7 @@
             methods.saveData(breakfastData);
         });
         $('#content').before(saveButton);
+        */
 
 
         // LOAD CONTENT
@@ -52,7 +53,7 @@
                 })
                 .fail( function( jqxhr, textStatus, error ) {
                     console.log( 'Request Failed : ' + textStatus + ', ' + error);
-                    $('#overlay').slideD('slow');
+                    $('#overlay').hide('slow');
                 })
                 .progress( function() {
                     $('#overlay').show();
@@ -66,127 +67,159 @@
 
         loadPage: function( data ) {
 
+            var breakfastAppDB = this;
+
             /* Empty content */
             $('#content').empty();
 
             /* TITLE */
             if( data.title ) {
-
-                $('#content').prepend(
-                    $( '<h1>', {
-                        html: 'Breakfast App ' //+ data.title
-                    })
+                $('#title').append(
+                    $( '<span>', { html: data.title } )
                 );
+            }
 
-                $('h1').after(
-                    $( '<h2>', {
-                        html: data.title
-                    })
-                );
-
+            /* PASTRIES */
+            if( data.pastries instanceof Array && data.pastries.length > 0 ) {
+                breakfastAppDB.loadPastries( data.pastries );
             }
 
             /* INFOS */
             if( data.infos instanceof Object ) {
-
-                var section = $( '<section>', {id: 'infos'} );
-
-                /* INFOS TITLE */
-                if( data.infos.title ) {
-                    $(section).prepend(
-                        $( '<p>', {
-                            html: '<label>Titre : </label><input type="text" value="' + data.infos.title + '"">'
-                        })
-                    );
-                }
-
-                /* PRICE INFOS */
-                if( data.infos.labelPrice && data.infos.price ) {
-                    $(section).append(
-                        $( '<p>', {
-                            html: 'Information prix : ' + data.infos.labelPrice + data.infos.price
-                        })
-                    );
-                }
-
-                /* COMPLEMENT INFOS */
-                if( data.infos.info ) {
-                    $(section).append(
-                        $('<p>', {
-                            html: 'Complément infos patisseries' + data.infos.info
-                        })
-                    );
-                }
-
-                section.appendTo('#content');
-
-
-                /* PASTRIES */
-                if( data.infos.pastries instanceof Array && data.infos.pastries.length > 0 ) {
-
-                    var section = $( '<section>', {id: 'pastries'} );
-                    var ul = $( '<ul>' );
-
-                    $(data.infos.pastries).each( function(num, pastrie) {
-                        if( pastrie instanceof Object) {
-                            $( '<li>', {
-                                html: pastrie.number + ' ' + pastrie.name
-                            }).appendTo(ul);
-                        }
-                    });
-
-                    ul.appendTo(section);
-                    section.appendTo('#content');
-
-                }
-
+                breakfastAppDB.loadInfos( data.infos );
             }
-
 
             /* CALENDAR */
-    /* TODO ! */
             if( data.calendar instanceof Object ) {
-
-                /* TITLE */
-                if( data.calendar.title ) {
-                    $('#calendar').before(
-                        $( '<h2>', {
-                            html: data.calendar.title
-                        })
-                    );
-                }
-
-                /* CALENDAR CHECK */
-                if( data.calendar.calendarCheck ) {
-                    $('#calendar').before(
-                        $( '<small>', {
-                            html: data.calendar.calendarCheck
-                        })
-                    );
-                }
-
+                breakfastAppDB.loadCalendarInfo( data.calendar );
             }
-
 
             /* USERS */
             if( data.users instanceof Array && data.users.length > 0 ) {
-
-                var section = $( '<section>', {id: 'users'} );
-                var ol = $( '<ol>' );
-
-                $(data.users).each( function(num, user) {
-
-                    if( user instanceof Object) {
-                        $( '<li>', { html: user.trigram } ).appendTo(ol);
-                    }
-
-                });
-
-                ol.appendTo(section);
-                section.appendTo('#content');
-
+                breakfastAppDB.loadUsers( data.users );
             }
 
+
+        },
+
+        loadUsers: function( users ) {
+            var breakfastAppDB = this;
+            var section = $( '<section>', {id: 'users'} );
+            var ol = $( '<ol>' );
+            var h3 = $( '<h3>users</h3>' );
+            h3.appendTo(section);
+
+            $(users).each( function(num, user) {
+
+                if( user instanceof Object) {
+                    var li = $( '<li>', { html: user.name } );
+
+                    breakfastAppDB.addListItemFunctions(li);
+
+                    li.appendTo(ol);
+                }
+
+            });
+
+            ol.appendTo(section);
+            section.appendTo('#content');
+        },
+
+        loadPastries: function(pastries) {
+            var breakfastAppDB = this;
+            var section = $( '<section>', {id: 'pastries'} );
+            var ol = $( '<ol>' );
+            var h3 = $( '<h3>pastries</h3>' );
+            h3.appendTo(section);
+
+            $(pastries).each( function(num, pastrie) {
+                if( pastrie instanceof Object) {
+                    var li = $( '<li>', { html: pastrie.name + ' x ' + pastrie.number });
+
+                    breakfastAppDB.addListItemFunctions(li);
+
+                    li.appendTo(ol);
+                }
+            });
+
+            ol.appendTo(section);
+            section.appendTo('#content');
+
+        },
+
+        loadInfos: function( infos ) {
+            var section = $( '<section>', {id: 'infos'} );
+            var h3 = $( '<h3>informations / various</h3>' );
+            h3.appendTo(section);
+
+            /* INFOS TITLE */
+            if( infos.title ) {
+                $(section).append(
+                    $( '<p>', {
+                        html: '<label>Titre : </label><input type="text" value="' + infos.title + '">'
+                    })
+                );
+            }
+
+            /* PRICE LABEL */
+            if( infos.labelPrice ) {
+                $(section).append(
+                    $( '<p>', {
+                        html: '<label>Label prix : </label><input type="text" value="' + infos.labelPrice + '">'
+                    })
+                );
+            }
+
+            /* PRICE INFOS */
+            if( infos.price ) {
+                $(section).append(
+                    $( '<p>', {
+                        html: '<label>Information prix : </label><input type="text" value="' + infos.price + '">'
+                    })
+                );
+            }
+
+            /* COMPLEMENT INFOS */
+            if( infos.info ) {
+                $(section).append(
+                    $('<p>', {
+                        html: '<label>Complément infos patisseries : </label><input type="text" value="' + infos.info + '">'
+                    })
+                );
+            }
+
+            section.appendTo('#content');
+        },
+
+        loadCalendarInfo: function( calendarInfo ) {
+            /* TITLE */
+            if( calendarInfo.title ) {
+                $('#calendar').before(
+                    $( '<h2>', {
+                        html: calendarInfo.title
+                    })
+                );
+            }
+
+            /* CALENDAR CHECK */
+            if( calendarInfo.calendarCheck ) {
+                $('#calendar').before(
+                    $( '<small>', {
+                        html: calendarInfo.calendarCheck
+                    })
+                );
+            }
+        },
+
+        addListItemFunctions: function(element) {
+
+            var deleteButton = $( '<button>', {class: 'action delete', value: '', title: 'remove'} );
+            deleteButton.click(function() { $(this).parent().slideUp('slow', function() { $(this).remove(); }); });
+            deleteButton.appendTo(element);
+
+            var sortButton = $( '<button>', {class: 'action sort', value: '', title: 'sort me'} );
+            sortButton.click(function() { alert('drag me'); });
+            sortButton.appendTo(element);
         }
 
     };
