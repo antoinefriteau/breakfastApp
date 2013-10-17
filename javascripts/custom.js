@@ -53,18 +53,18 @@
 						);
 					}
 
-					/* PASTRIES */
-					if( breakfastData.infos.pastries instanceof Array && breakfastData.infos.pastries.length > 0 ) {
+				}
 
-						jQuery(breakfastData.infos.pastries).each( function(num, pastrie) {
-							if( pastrie instanceof Object) {
-								jQuery( '<li>', {
-									html: pastrie.number + ' ' + pastrie.name
-								}).appendTo('#pastries');
-							}
-						});
-					}
+				/* PASTRIES */
+				if( breakfastData.pastries instanceof Array && breakfastData.pastries.length > 0 ) {
 
+					jQuery(breakfastData.pastries).each( function(num, pastrie) {
+						if( pastrie instanceof Object) {
+							jQuery( '<li>', {
+								html: pastrie.number + ' ' + pastrie.name
+							}).appendTo('#pastries');
+						}
+					});
 				}
 
 				/* CALENDAR */
@@ -95,8 +95,7 @@
 					jQuery(breakfastData.users).each( function(num, user) {
 						if( user instanceof Object) {
 							jQuery( '<li>', {
-								//html: user.name + ' ' + user.lastName
-								html: user.trigram + '<strong>20/04/2013</strong>'
+								html: user.name + '<strong>20/04/2013</strong>'
 							}).appendTo('#calendar');
 						}
 					});

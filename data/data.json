@@ -2,38 +2,11 @@
     "title": "Petit Déjeuner du Vendredi",
     "infos": {
         "title": "Commande type",
-        "labelPrice": "Estimation tarif",
-        "price": "entre 35€ et 40€ (compte tenu de la réduction* de 10%)",
-        "info": "* Catherine Benichou a réussi à avoir 10% à la boulangerie d'en face (en prévenant la veille de la part de l'Apec)",
-        "pastries": [
-            {
-                "name": "pains au chocolat",
-                "number": "15",
-                "modificationDate": "16/09/2013"
-            },
-            {
-                "name": "pains au raisin",
-                "number": "15",
-                "modificationDate": "16/09/2013"
-            },
-            {
-                "name": "croissants aux amandes",
-                "number": "5 à 10",
-                "modificationDate": "16/09/2013"
-            },
-            {
-                "name": "choux à la crème ou chouquettes",
-                "number": "12",
-                "modificationDate": "16/09/2013"
-            },
-            {
-                "name": "litres de boissons",
-                "number": "3 à 4",
-                "modificationDate": "16/09/2013"
-            }
-        ]
+        "labelPrice": "Estimation du tarif",
+        "price": "entre 35€ et 40€",
+        "info": "* remise de 10% à la boulangerie d'en face (en prévenant la veille de la part de la société)"
     },
-    "calendar" : {
+    "calendar": {
         "title" : "Dates",
         "calendarCheck" : "Vérifiez vos dates de congés, S.V.P.",
         "amendedDates" : [
@@ -41,18 +14,71 @@
             { "amendedDate": "28/09/2013"}
         ]
     },
+    "pastries": [
+        {
+            "name": "pains au chocolat",
+            "number": "15",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "pains au raisin",
+            "number": "15",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "croissants aux amandes",
+            "number": "5 à 10",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "choux à la crème ou chouquettes",
+            "number": "12",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "litres de boissons",
+            "number": "3 à 4",
+            "modificationDate": "16/09/2013"
+        }
+    ],
     "users" : [
         {
             "name": "Antoine",
-            "lastName": "Friteau",
-            "trigram": "AFU",
             "creationDate": "16/09/2013",
             "modificationDate": "16/09/2013"
         },
         {
-            "name": "Driss",
-            "lastName": "Aitali",
-            "trigram": "DAI",
+            "name": "John Do",
+            "creationDate": "16/09/2013",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "John Do",
+            "creationDate": "16/09/2013",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "John Do",
+            "creationDate": "16/09/2013",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "John Do",
+            "creationDate": "16/09/2013",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "John Do",
+            "creationDate": "16/09/2013",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "John Do",
+            "creationDate": "16/09/2013",
+            "modificationDate": "16/09/2013"
+        },
+        {
+            "name": "John Do",
             "creationDate": "16/09/2013",
             "modificationDate": "16/09/2013"
         }
